@@ -1,0 +1,13 @@
+name = "bro"
+license = "GPLv3"
+licenselink = "https://github.com/akatiggerx04/graysx-hugo/blob/master/LICENSE"
+description = "Ally Bros Hugo Theme"
+homepage = "https://github.com/akatiggerx04/graysx-hugo"
+tags = ["minimal", "gray", "dark"]
+features = ["responsive"]
+min_version = "0.41.0"
+
+[author]
+  name = "umutalacam"
+  homepage = "https://github.com/umutalacam"
+  repo = "https://github.com/akatiggerx04/graysx-hugo"

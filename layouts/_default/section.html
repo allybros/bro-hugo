@@ -1,0 +1,42 @@
+{{ partial "head" (dict "site" .Site) }}
+
+{{ partial "nav" (dict "site" .Site) }}
+
+<section id="hero" class="hero is-medium" style="background-color: #090a0c; background-image: url('{{ .Param "image" }}')">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title"> {{ .Title }}</h1>
+            <p class="subtitle"> {{ .Description }}</p>
+        </div>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="content">{{ .Content }}</div>
+    </div>
+
+    <div class="container">
+        {{ range .Pages }}
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image is-128x128 is-rounded">
+                            <img src="{{ .Param "image" }}" alt="{{ .Title }} icon"/>
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <p class="title is-4">{{ .Title }}</p>
+                        <p class="subtitle is-6">{{ .Description }}</p>
+                        <a class="button" href="{{ .Permalink }}">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ partial "site-footer" (dict "site" .Site) }}

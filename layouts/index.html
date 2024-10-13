@@ -1,0 +1,52 @@
+{{ partial "head" (dict "site" .Site) }}
+
+{{ partial "nav" (dict "site" .Site) }}
+
+<section id="hero" class="hero is-large hero-bg">
+    <div class="hero-body">
+        <h1 class="title">Innovative and Modern Solutions</h1>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="content">
+            <h2>Technology for People</h2>
+            <p>
+                As the Ally Bros technology team, we develop projects that add value to you with innovative and modern
+                solutions. We aim to contribute to the advancement of technology and improve the quality of human life.
+                Therefore, we ensure that the projects we develop are respectful to the user, beneficial to society,
+                and promote freedom.
+            </p>
+            <a class="button" href="./about/">About Us</a>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <div class="content">
+                    <h2>Our Projects</h2>
+                    <p>
+                        Start using or download and access to the source code of Ally Bros projects and products.
+                    </p>
+                    <a class="button" href="./projects/">Our Projects</a>
+                </div>
+            </div>
+            <div class="column is-one-thirds">
+                <figure class="image">
+                    <img src="/img/our_apps.jpg" alt="Placeholder image">
+                </figure>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+{{ partial "site-footer" (dict "site" .Site) }}
+
+

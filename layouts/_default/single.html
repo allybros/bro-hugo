@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+{{ partial "head" }}
+<body>
+{{ partial "nav" (dict "site" .Site) }}
+
+<section id="content">
+    <div class="container">
+        <div class="content">
+            <h1 class="title">
+                {{ .Title }}
+            </h1>
+            <p>
+                {{ .Content }}
+            </p>
+        </div>
+    </div>
+</section>
+{{ partial "site-footer" (dict "site" .Site) }}
+
+</body>
+</html>
