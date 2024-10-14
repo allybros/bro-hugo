@@ -1,13 +1,37 @@
 :root {
+    --bro-gray-text: #acacac;
     --bulma-family-primary: Noto Sans, Inter, SF Pro, Segoe UI, Roboto, Oxygen, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif;
     --bulma-family-secondary: Noto Sans, Inter, SF Pro, Segoe UI, Roboto, Oxygen, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif;
     --bulma-family-code: Inconsolata, Hack, SF Mono, Roboto Mono, Source Code Pro, Ubuntu Mono, monospace;
+    --bulma-primary-h: 187deg;
+    --bulma-primary-s: 14.7%;
+    --bulma-primary-l: 55.9%;
+    --bulma-primary-invert-h: 180;
+    --bulma-primary-invert-s:  55%;
+    --bulma-primary-invert-l: 100%;
+    --max-mobile: 768px;
+    --max-tablet: 1023px;
+    --max-desktop: 1215px;
+    --max-widescreen: 1407px;
+    --max-full-hd: 1408px;
+    --bro-mobile-container-padding: 0rem 1rem
 }
 
 .navbar {
-    --bulma-navbar-h: #ffffff;
     --bulma-navbar-background-color: #232323;
+    --bulma-navbar-padding-horizontal: 4rem;
+    --bulma-navbar-padding-vertical: 0.5rem;
     padding: 0.5rem 4rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
 }
 
 .navbar .navbar-brand .navbar-item {
@@ -27,8 +51,17 @@
 
 .navbar a.navbar-item:hover {
     font-weight: bold;
-    color: cyan;
+    background: transparent;
     --bulma-link-text: #f3f4f6;
+    transition: 0.2s;
+}
+
+.navbar-burger {
+    color: white;
+}
+
+.navbar-burger:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .hero::before {
@@ -77,7 +110,48 @@ section {
 footer.footer {
     --bulma-footer-background-color: #232323;
     --bulma-footer-padding: 2rem;
-    text-align: center;
+    color: var(--bro-gray-text);
+}
+
+.button {
     font-weight: bold;
-    color: white;
+}
+
+.is-flex {
+    display: flex;
+}
+
+.is-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-justify-end {
+    justify-content: end;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.input, .textarea {
+    --bulma-input-focus-h: 180;
+    --bulma-input-focus-s: 50%;
+    --bulma-input-focus-l: 40%;
+}
+
+.intro .title {
+    font-weight: bold;
+    font-size: 3rem;
+}
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.section.minimum_full{
+    min-height: 90vh;
+}
+
+.text-align-center {
+    text-align: center;
 }

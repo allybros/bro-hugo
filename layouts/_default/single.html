@@ -4,7 +4,7 @@
 <body>
 {{ partial "nav" (dict "site" .Site) }}
 
-<section id="content">
+<section id="content" class="section mt-5 minimum_full">
     <div class="container">
         <div class="content">
             <h1 class="title">
@@ -16,7 +16,7 @@
         </div>
     </div>
 </section>
-{{ partial "site-footer" (dict "site" .Site) }}
+{{ partial "footer" (dict "site" .Site) }}
 
 </body>
 </html>
