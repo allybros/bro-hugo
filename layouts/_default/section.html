@@ -1,4 +1,4 @@
-{{ partial "head" (dict "site" .Site) }}
+{{ partial "head" (dict "page" .Page) }}
 
 {{ partial "nav" (dict "site" .Site) }}
 
@@ -22,7 +22,7 @@
             <div class="card-content">
                 <div class="media">
                     <div class="media-left">
-                        <figure class="image is-128x128 is-rounded">
+                        <figure class="image is-128x128 app-icon">
                             <img src="{{ .Param "image" }}" alt="{{ .Title }} icon"/>
                         </figure>
                     </div>
