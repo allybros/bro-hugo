@@ -4,16 +4,56 @@
 <body>
 {{ partial "nav" (dict "site" .Site) }}
 
+
 <section id="content" class="minimum_full">
     <div class="container">
         <nav class="breadcrumb" aria-label="breadcrumbs">
             <ul>
                 {{ range .Ancestors.Reverse }}
-                <li><a href="{{ .RelPermalink }}"> {{ .LinkTitle}}</a></li>
+                <li class="has-bullet-separator"><a href="{{ .RelPermalink }}">{{ .LinkTitle}}</a></li>
                 {{ end }}
                 <li class="is-active"><a href="." aria-current="page">{{ .Title }}</a></li>
             </ul>
         </nav>
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image app-icon">
+                            <img src="{{ .Param "image" }}" alt="{{ .Title }} icon"/>
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <h1 class="title is-4">{{ .Title }}</h1>
+                        <p class="subtitle is-6" style="margin-bottom: 0.5rem">{{ .Description }}</p>
+                        <div style="margin-bottom: 0.5rem">
+                            {{ range .Param "tags" }}
+                            <span class="tag is-light">{{ . }}</span>
+                            {{ end }}
+                        </div>
+
+                        {{ if .Param "externalLink" }}
+                        <a class="button is-primary" href="{{ .Param "externalLink" }}">
+                            <span class="icon"><i class="fa fa-globe"></i></span>
+                            <span>Open</span>
+                        </a>
+                        {{ end }}
+                        {{ if .Param "storeLink" }}
+                        <a class="button is-primary" href="{{ .Param "storeLink" }}">
+                            <span class="icon"><i class="fa fa-download"></i></span>
+                            <span>Download</span>
+                        </a>
+                        {{ end }}
+                        {{ if .Param "sourceCodeLink" }}
+                        <a class="button" href="{{ .Param "sourceCodeLink" }}">
+                            <span class="icon"><i class="fab fa-github"></i></span>
+                            <span>Source</span>
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="content">
             {{ .Content }}
         </div>

@@ -22,13 +22,18 @@
             <div class="card-content">
                 <div class="media">
                     <div class="media-left">
-                        <figure class="image is-128x128 app-icon">
+                        <figure class="image app-icon">
                             <img src="{{ .Param "image" }}" alt="{{ .Title }} icon"/>
                         </figure>
                     </div>
                     <div class="media-content">
-                        <p class="title is-4">{{ .Title }}</p>
-                        <p class="subtitle is-6">{{ .Description }}</p>
+                        <h3 class="title is-4" style="margin-bottom: 0.25rem">{{ .Title }}</h3>
+                        <p style="margin-bottom: 0.25rem">{{ .Description }}</p>
+                        <div style="margin-bottom: 0.5rem">
+                            {{ range .Param "tags" }}
+                            <span class="tag is-light">{{ . }}</span>
+                            {{ end }}
+                        </div>
                         <a class="button" href="{{ .Permalink }}">Read More</a>
                     </div>
                 </div>

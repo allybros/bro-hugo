@@ -24,17 +24,6 @@
     padding: 0.5rem 4rem;
 }
 
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0.5rem 0;
-    }
-
-    .container {
-        padding: 0 1.25rem;
-    }
-}
-
 .navbar .navbar-brand .navbar-item {
     font-size: 1.25rem;
     font-weight: bolder;
@@ -160,4 +149,42 @@ footer.footer {
 
 .app-icon img {
     border-radius: 20px;
+}
+
+.app-icon img {
+    width: 128px;
+    height: 128px;
+}
+
+.breadcrumb a {
+    --bulma-breadcrumb-item-color: black
+}
+
+.breadcrumb {
+    --bulma-breadcrumb-item-hover-color: var(--bulma-primary);
+    --bulma-breadcrumb-item-active-color: var(--bulma-primary-dark);
+}
+
+.breadcrumb li.is-active {
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .app-icon img {
+        border-radius: 10px;
+    }
+
+    .app-icon img {
+        width: 64px;
+        height: 64px;
+    }
 }
