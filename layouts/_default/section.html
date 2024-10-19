@@ -4,7 +4,17 @@
 <body>
 {{ partial "nav" (dict "site" .Site) }}
 
-<section id="hero" class="hero is-medium" style="background-color: #090a0c; background-image: url('{{ .Param "image" }}')">
+{{ $image := (.Param "image") }}
+{{ $portfolio := (.Param "portfolio") }}
+
+<section id="hero"
+    {{ if $image }}
+        class="hero is-medium"
+        style="background-color: #090a0c; background-image: url('{{ $image }}')"
+    {{ else }}
+        class="hero is-medium hero-bg"
+    {{ end }}
+>
     <div class="hero-body">
         <div class="container">
             <h1 class="title"> {{ .Title }}</h1>
@@ -13,35 +23,47 @@
     </div>
 </section>
 
-<section id="content">
+<section id="content" class="section minimum_full">
     <div class="container">
         <div class="content">{{ .Content }}</div>
     </div>
 
     <div class="container">
         {{ range .Pages }}
-        <div class="card">
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image app-icon">
-                            <img src="{{ .Param "appIcon" }}" alt="{{ .Title }} icon"/>
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <h3 class="title is-4" style="margin-bottom: 0.25rem">{{ .Title }}</h3>
-                        <p style="margin-bottom: 0.25rem">{{ .Description }}</p>
-                        <div style="margin-bottom: 0.5rem">
-                            {{ range .Param "tags" }}
-                            <span class="tag is-light">{{ . }}</span>
-                            {{ end }}
+            {{ if $portfolio}}
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image app-icon">
+                                    <img src="{{ .Param "appIcon" }}" alt="{{ .Title }} icon"/>
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <h3 class="title is-4" style="margin-bottom: 0.25rem">{{ .Title }}</h3>
+                                <p style="margin-bottom: 0.25rem">{{ .Description }}</p>
+                                <div style="margin-bottom: 0.5rem">
+                                    {{ range .Param "tags" }}
+                                    <span class="tag is-light">{{ . }}</span>
+                                    {{ end }}
+                                </div>
+                                <a class="button" href="{{ .Permalink }}">Read More</a>
+                            </div>
                         </div>
-                        <a class="button" href="{{ .Permalink }}">Read More</a>
+                    </div>
+
+                </div>
+            {{ else }}
+                <div class="post-link">
+                    <a class="title is-4" style="margin-bottom: 0.5rem" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p style="margin-bottom: 0.5rem">{{ .Description }}</p>
+                    <div style="margin-bottom: 0.5rem">
+                        {{ range .Param "tags" }}
+                        <span class="tag is-light">{{ . }}</span>
+                        {{ end }}
                     </div>
                 </div>
-            </div>
-
-        </div>
+            {{ end }}
         {{ end }}
     </div>
 </section>

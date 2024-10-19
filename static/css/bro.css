@@ -77,8 +77,7 @@
 }
 
 .hero-bg {
-    background: #090a0c url("/img/hero-bg.png");
-    background-position: center;
+    background: linear-gradient(rgb(85, 131, 128) 0%, rgb(141, 238, 230) 100%);
 }
 
 .hero .title {
@@ -169,6 +168,14 @@ footer.footer {
     font-weight: bold;
 }
 
+.post-link {
+    margin-bottom: 2rem;
+}
+
+.post-link a:hover {
+    text-decoration-line: underline;
+
+}
 
 @media (max-width: 768px) {
     .navbar {
