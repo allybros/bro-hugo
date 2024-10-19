@@ -1,5 +1,8 @@
+<!doctype html>
+<html lang="en-US">
 {{ partial "head" (dict "page" .Page) }}
 
+<body>
 {{ partial "nav" (dict "site" .Site) }}
 
 <section id="intro" class="intro">
@@ -19,6 +22,7 @@
     </div>
 </section>
 
+{{ if .Param "call_to_action_title" }}
 <section id="about" style="background-color: #f1f1f1">
     <div class="container">
         <div class="column is-two-thirds">
@@ -36,66 +40,33 @@
         </div>
     </div>
 </section>
+{{ end }}
 
-<section id="services" class="section">
+{{ if .Param "features_title" }}
+<section id="features" class="section">
     <div class="container">
         <div class="content text-align-center">
-            <h2>What We Do?</h2>
-            <p>Discover the culture and business model of Ally Bros</p>
+            <h2>{{ .Param "features_title" }}</h2>
+            <p>{{ .Param "features_subtitle" }}</p>
             <div class="columns">
+                {{ range .Param "features" }}
                 <div class="column is-one-third">
                     <figure class="image is-4by3">
-                        <img
-                                src="/img/idea.svg"
-                                alt="Placeholder image"
-                        />
+                        <img src="{{ .image }}" alt="{{ .title }}"/>
                     </figure>
                     <div class="content">
-                        <h3>Ideation and Analysis</h3>
-                        <p>
-                            At Ally Bros, we constantly ideate and try to find solutions for daily life problems,
-                            perform analysis of feasibility and market.
-                        </p>
-
-                    </div>
-
-                </div>
-                <div class="column is-one-third">
-
-                        <figure class="image is-4by3">
-                            <img
-                                    src="/img/development.svg"
-                                    alt="Placeholder image"
-                            />
-                        </figure>
-                    <div class="content">
-                        <h3>Product Development</h3>
-                        <p>
-                            With our highly skilled team, we build solutions for people, as an end to end product development
-                        </p>
-
+                        <h3>{{ .title }}</h3>
+                        <p> {{ .description }}</p>
                     </div>
                 </div>
-                <div class="column is-one-third">
-                    <figure class="image is-4by3">
-                        <img
-                                src="/img/open-source.svg"
-                                alt="Placeholder image"
-                        />
-                    </figure>
-                    <div class="content">
-                        <h3>Contribution</h3>
-                        <p>
-                            As we build solutions, we share our components as open source to allow people to leverage
-                            same components for other solutions.
-                        </p>
-                    </div>
-                </div>
+                {{ end }}
             </div>
         </div>
     </div>
 </section>
+{{ end }}
 
 {{ partial "footer" (dict "site" .Site) }}
 
+</body>
 

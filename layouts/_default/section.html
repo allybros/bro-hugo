@@ -1,5 +1,7 @@
+<!doctype html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
 {{ partial "head" (dict "page" .Page) }}
-
+<body>
 {{ partial "nav" (dict "site" .Site) }}
 
 <section id="hero" class="hero is-medium" style="background-color: #090a0c; background-image: url('{{ .Param "image" }}')">
@@ -23,7 +25,7 @@
                 <div class="media">
                     <div class="media-left">
                         <figure class="image app-icon">
-                            <img src="{{ .Param "image" }}" alt="{{ .Title }} icon"/>
+                            <img src="{{ .Param "appIcon" }}" alt="{{ .Title }} icon"/>
                         </figure>
                     </div>
                     <div class="media-content">
@@ -43,5 +45,6 @@
         {{ end }}
     </div>
 </section>
-
+</body>
 {{ partial "footer" (dict "site" .Site) }}
+</html>

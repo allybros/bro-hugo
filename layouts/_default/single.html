@@ -3,8 +3,6 @@
 {{ partial "head" (dict "page" .Page) }}
 <body>
 {{ partial "nav" (dict "site" .Site) }}
-
-
 <section id="content" class="minimum_full">
     <div class="container">
         <nav class="breadcrumb" aria-label="breadcrumbs">
@@ -15,12 +13,13 @@
                 <li class="is-active"><a href="." aria-current="page">{{ .Title }}</a></li>
             </ul>
         </nav>
+        {{ if .Param "appIcon" }}
         <div class="card">
             <div class="card-content">
                 <div class="media">
                     <div class="media-left">
                         <figure class="image app-icon">
-                            <img src="{{ .Param "image" }}" alt="{{ .Title }} icon"/>
+                            <img src="{{ .Param "appIcon" }}" alt="{{ .Title }} icon"/>
                         </figure>
                     </div>
                     <div class="media-content">
@@ -54,12 +53,12 @@
                 </div>
             </div>
         </div>
+        {{ end }}
         <div class="content">
             {{ .Content }}
         </div>
     </div>
 </section>
 {{ partial "footer" (dict "site" .Site) }}
-
 </body>
 </html>
