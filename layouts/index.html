@@ -5,13 +5,15 @@
 <body>
 {{ partial "nav" (dict "site" .Site) }}
 
-<section id="intro" class="section intro">
+<section id="home-intro" class="section intro">
     <div class="container is-max-widescreen">
         <div class="columns">
             <div class="column is-half is-flex is-flex-column flex-justify-center">
                 <h1 class="title">{{ .Param "description" }}</h1>
                 <p>{{ .Param "hero_text" }}</p>
+                {{ if (.Param "hero_button_label") }}
                 <div class="block"><a class="button is-primary mt-5" href="{{ .Param "hero_button_url" }}">{{ .Param "hero_button_label" }}</a></div>
+                {{ end }}
             </div>
             <div class="column is-half">
                 <figure class="image">
@@ -22,8 +24,8 @@
     </div>
 </section>
 
-{{ if .Param "call_to_action_title" }}
-<section id="about" style="background-color: #f1f1f1" class="section">
+{{ if .Content }}
+<section id="home-content" style="background-color: #f1f1f1" class="section">
     <div class="container is-max-widescreen">
         <div class="column is-two-thirds">
             <div class="content">
@@ -35,7 +37,7 @@
 {{ end }}
 
 {{ if .Param "features_title" }}
-<section id="features" class="section my-5">
+<section id="home-features" class="section my-5">
     <div class="container is-max-widescreen">
         <div class="content text-align-center">
             <h2>{{ .Param "features_title" }}</h2>
