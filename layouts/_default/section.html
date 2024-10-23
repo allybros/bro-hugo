@@ -4,16 +4,15 @@
 <body>
 {{ partial "nav" (dict "site" .Site) }}
 
-{{ $image := (.Param "image") }}
-{{ $portfolio := (.Param "portfolio") }}
-
+{{- $image := (.Param "image") }}
+{{- $portfolio := (.Param "portfolio") }}
 <section id="hero"
-    {{ if $image }}
+    {{- if $image }}
         class="hero is-medium"
         style="background-color: #090a0c; background-image: url('{{ $image }}')"
-    {{ else }}
+    {{- else }}
         class="hero is-medium hero-bg"
-    {{ end }}
+    {{- end }}
 >
     <div class="hero-body">
         <div class="container is-max-widescreen">
@@ -24,51 +23,49 @@
 </section>
 
 <section id="content" class="section">
-    {{ if .Content }}
+    {{- if .Content }}
     <div class="container is-max-widescreen">
         <div class="content">{{ .Content }}</div>
     </div>
-    {{ end }}
-
+    {{- end }}
     <div class="container is-max-widescreen">
-        {{ range .Pages }}
-            {{ if $portfolio}}
-                <div class="card">
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-left">
-                                <figure class="image app-icon">
-                                    <img src="{{ .Param "appIcon" }}" alt="{{ .Title }} icon"/>
-                                </figure>
-                            </div>
-                            <div class="media-content">
-                                <h3 class="title is-4" style="margin-bottom: 0.25rem">{{ .Title }}</h3>
-                                <p style="margin-bottom: 0.25rem">{{ .Description }}</p>
-                                <div style="margin-bottom: 0.5rem">
-                                    {{ range .Param "tags" }}
-                                    <span class="tag is-light">{{ . }}</span>
-                                    {{ end }}
-                                </div>
-                                <a class="button" href="{{ .Permalink }}">Read More</a>
-                            </div>
+    {{- range .Pages }}
+        {{- if $portfolio}}
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                        <figure class="image app-icon">
+                            <img src="{{ .Param "appIcon" }}" alt="{{ .Title }} icon"/>
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <h3 class="title is-4" style="margin-bottom: 0.25rem">{{ .Title }}</h3>
+                        <p style="margin-bottom: 0.25rem">{{ .Description }}</p>
+                        <div style="margin-bottom: 0.5rem">
+                            {{- range .Param "tags" }}
+                            <span class="tag is-light">{{ . }}</span>
+                            {{- end }}
                         </div>
-                    </div>
-
-                </div>
-            {{ else }}
-                <div class="post-link">
-                    <a class="title is-4" style="margin-bottom: 0.5rem" href="{{ .Permalink }}">{{ .Title }}</a>
-                    <p style="margin-bottom: 0.5rem">{{ .Description }}</p>
-                    <div style="margin-bottom: 0.5rem">
-                        {{ range .Param "tags" }}
-                        <span class="tag is-light">{{ . }}</span>
-                        {{ end }}
+                        <a class="button" href="{{ .Permalink }}">Read More</a>
                     </div>
                 </div>
-            {{ end }}
-        {{ end }}
+            </div>
+        </div>
+        {{- else }}
+        <div class="post-link">
+            <a class="title is-4" style="margin-bottom: 0.5rem" href="{{ .Permalink }}">{{ .Title }}</a>
+            <p style="margin-bottom: 0.5rem">{{ .Description }}</p>
+            <div style="margin-bottom: 0.5rem">
+                {{ range .Param "tags" }}
+                <span class="tag is-light">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+        {{- end }}
+    {{- end }}
     </div>
 </section>
-</body>
 {{ partial "footer" (dict "site" .Site) }}
+</body>
 </html>

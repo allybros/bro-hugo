@@ -1,11 +1,7 @@
-
 <nav id="navbar" class="navbar is-transparent" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                {{ .site.Title }}
-            </a>
-
+            <a class="navbar-item" href="/">{{ .site.Title }}</a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -15,11 +11,9 @@
         </div>
         <div id="navbar-menu" class="navbar-menu">
             <div class="navbar-end">
-                {{ range .site.Menus.main }}
-                <a class="navbar-item" href='{{ .URL }}'>
-                    {{ .Name }}
-                </a>
-                {{ end }}
+                {{- range .site.Menus.main }}
+                <a class="navbar-item" href='{{ .URL }}'>{{ .Name }}</a>
+                {{- end }}
             </div>
         </div>
     </div>

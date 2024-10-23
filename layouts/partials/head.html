@@ -1,19 +1,21 @@
 <head>
     <meta charset="UTF-8">
-    {{ if .page.IsHome }}
-    <title> {{ .page.Site.Title }} | {{ .page.Site.Param "Description" }}</title>
-    {{ else }}
-    <title> {{ .page.Title }} - {{ .page.Site.Title }}</title>
-    {{ end }}
-    {{ if .page.Param "meta_description" }}
+    {{- if .page.IsHome}}
+    <title>{{ .page.Site.Title }} | {{ .page.Site.Param "Description" }}</title>
+    {{- else }}
+    <title>{{ .page.Title }} - {{ .page.Site.Title }}</title>
+    {{- end }}
+    {{- if .page.Param "meta_description" }}
     <meta name="description" content="{{ .page.Param "meta_description" }}">
-    {{ end }}
-    {{ if .page.Param "meta_keywords" }}
+    {{- else }}
+    <meta name="description" content="{{ .page.Param "description" }}">
+    {{- end }}
+    {{- if .page.Param "meta_keywords" }}
     <meta name="keywords" content="{{ .page.Param "meta_keywords" }}">
-    {{ end }}
-    {{ if .page.Param "author" }}
+    {{- end }}
+    {{- if .page.Param "author" }}
     <meta name="author" content="{{ .page.Param "author" }}">
-    {{ end }}
+    {{- end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bulma.min.css">
     <link rel="stylesheet" href="/css/bro.css">
