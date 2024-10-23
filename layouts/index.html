@@ -5,8 +5,8 @@
 <body>
 {{ partial "nav" (dict "site" .Site) }}
 
-<section id="intro" class="intro">
-    <div class="container">
+<section id="intro" class="section intro">
+    <div class="container is-max-widescreen">
         <div class="columns">
             <div class="column is-half is-flex is-flex-column flex-justify-center">
                 <h1 class="title">{{ .Param "description" }}</h1>
@@ -23,18 +23,11 @@
 </section>
 
 {{ if .Param "call_to_action_title" }}
-<section id="about" style="background-color: #f1f1f1">
-    <div class="container">
+<section id="about" style="background-color: #f1f1f1" class="section">
+    <div class="container is-max-widescreen">
         <div class="column is-two-thirds">
             <div class="content">
-                <h2>We code freely, for you!</h2>
-                <p>
-                    As Ally Bros, we develop projects that add value to you with innovative and modern
-                    solutions. We aim to contribute to the advancement of technology and improve the quality of human life.
-                    Therefore, we ensure that the projects we develop are respectful to the user, beneficial to society,
-                    and promote freedom.
-                </p>
-                <a class="button" href="./about/">About Us</a>
+                {{ .Content }}
             </div>
         </div>
     </div>
@@ -42,8 +35,8 @@
 {{ end }}
 
 {{ if .Param "features_title" }}
-<section id="features" class="section">
-    <div class="container">
+<section id="features" class="section my-5">
+    <div class="container is-max-widescreen">
         <div class="content text-align-center">
             <h2>{{ .Param "features_title" }}</h2>
             <p>{{ .Param "features_subtitle" }}</p>

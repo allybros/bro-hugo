@@ -92,11 +92,6 @@
     font-weight: normal;
 }
 
-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
 footer.footer {
     --bulma-footer-background-color: #232323;
     --bulma-footer-padding: 2rem;
@@ -134,10 +129,20 @@ footer.footer {
     font-weight: bold;
     font-size: 3rem;
 }
+
+.my-5 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 .mt-5 {
     margin-top: 3rem;
 }
 
+.section {
+    --bulma-section-padding: 1.5rem;
+    --bulma-section-padding-desktop: 1.5rem 3rem;
+}
 .section.minimum_full{
     min-height: 90vh;
 }
@@ -182,10 +187,6 @@ footer.footer {
         padding: 0.5rem 0;
     }
 
-    .container {
-        padding: 0 1.25rem;
-    }
-
     .app-icon img {
         border-radius: 10px;
     }
@@ -194,4 +195,5 @@ footer.footer {
         width: 64px;
         height: 64px;
     }
+
 }

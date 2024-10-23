@@ -16,7 +16,7 @@
     {{ end }}
 >
     <div class="hero-body">
-        <div class="container">
+        <div class="container is-max-widescreen">
             <h1 class="title"> {{ .Title }}</h1>
             <p class="subtitle"> {{ .Description }}</p>
         </div>
@@ -24,11 +24,13 @@
 </section>
 
 <section id="content" class="section">
-    <div class="container">
+    {{ if .Content }}
+    <div class="container is-max-widescreen">
         <div class="content">{{ .Content }}</div>
     </div>
+    {{ end }}
 
-    <div class="container">
+    <div class="container is-max-widescreen">
         {{ range .Pages }}
             {{ if $portfolio}}
                 <div class="card">
