@@ -1,8 +1,21 @@
 <head>
     <meta charset="UTF-8">
+    {{ if .page.IsHome }}
+    <title> {{ .page.Site.Title }} | {{ .page.Site.Param "Description" }}</title>
+    {{ else }}
     <title> {{ .page.Title }} - {{ .page.Site.Title }}</title>
+    {{ end }}
+    {{ if .page.Param "meta_description" }}
+    <meta name="description" content="{{ .page.Param "meta_description" }}">
+    {{ end }}
+    {{ if .page.Param "meta_keywords" }}
+    <meta name="keywords" content="{{ .page.Param "meta_keywords" }}">
+    {{ end }}
+    {{ if .page.Param "author" }}
+    <meta name="author" content="{{ .page.Param "author" }}">
+    {{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/versions/bulma-no-dark-mode.min.css">
+    <link rel="stylesheet" href="/css/bulma.min.css">
     <link rel="stylesheet" href="/css/bro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
