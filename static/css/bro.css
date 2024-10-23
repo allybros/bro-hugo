@@ -14,7 +14,8 @@
     --max-desktop: 1215px;
     --max-widescreen: 1407px;
     --max-full-hd: 1408px;
-    --bro-mobile-container-padding: 0rem 1rem
+    --bro-mobile-container-padding: 0rem 1rem;
+    --bulma-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
@@ -184,7 +185,12 @@ footer.footer {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 0.5rem 0;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
     .app-icon img {
