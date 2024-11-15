@@ -1,0 +1,59 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Brand'
+theme = 'bro'
+
+## Site Settings
+[params]
+logo = "assets/img/logo.webp"
+favicon = "assets/favicon.png"
+description = "A great theme for your software development organization"
+# Info
+address = "Planet Earth"
+email = "info@allybros.com"
+phone = "123456"
+
+# Hero section
+hero_text = "You can freely utilize the sleek design that we created for our website!"
+hero_image = "/img/intro.svg"
+hero_button_label = "Visit Ally Bros Home Page"
+hero_button_url = "https://allybros.com"
+
+# Features
+# If you don't have the features title, features section is not rendered
+features_title = "Explain your services here"
+features_subtitle = "Let people know what you do"
+
+[[params.features]]
+image = "/img/idea.svg"
+title = "Title"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+
+[[params.features]]
+image = "/img/development.svg"
+title = "Title"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+
+[[params.features]]
+image = "/img/open-source.svg"
+title = "Title"
+description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+
+# Other
+## Menu Items
+[menu]
+[[menu.main]]
+name = "About"
+URL = "/about"
+weight = 1
+
+[[menu.main]]
+name = "Projects"
+URL = "/projects"
+weight = 2
+
+[[menu.main]]
+name = "Posts"
+URL = "/posts"
+weight = 3
+

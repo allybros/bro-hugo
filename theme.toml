@@ -2,13 +2,13 @@ name = "bro"
 license = "GPLv3"
 version = "1.0.0"
 licenselink = "https://github.com/allybros/bro-hugo"
-description = "Ally Bros Hugo Theme"
+description = "Hugo Theme that powers up allybros.com"
 homepage = "https://github.com/allybros/bro-hugo"
 tags = ["minimal", "gray", "dark"]
 features = ["responsive"]
 min_version = "0.41.0"
 
 [author]
-  name = "umutalacam"
-  homepage = "https://github.com/umutalacam"
-  repo = "https://github.com/umutalacam/bro-hugo"
+  name = "Ally Bros"
+  homepage = "https://github.com/allybros"
+  repo = "https://github.com/allybros/bro-hugo"
